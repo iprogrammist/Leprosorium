@@ -1,4 +1,3 @@
-#encoding: utf-8
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
@@ -35,7 +34,7 @@ end
 get '/' do
 	# выбираем список постов из БД
 
-	results = @db.execute 'select * from Posts order by id desc'
+	@results = @db.execute 'select * from Posts order by id desc'
 
 	erb :index			
 end
